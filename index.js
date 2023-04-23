@@ -4,6 +4,9 @@ const app = express();
 
 app.use(bodyParser.text());
 
+const port = process.env.PORT || 3131;
+const host = process.env.HOST || '0.0.0.0';
+
 app.get('/test', (req, res) => {
   res.send('Hello World!');
 });
@@ -13,6 +16,6 @@ app.post('/', (req, res) => {
   res.send(req.body);
 });
 
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
+app.listen(port, host, () => {
+  console.log(`Server running locally at http://${host}:${port}/`);
 });

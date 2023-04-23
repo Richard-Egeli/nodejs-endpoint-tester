@@ -4,7 +4,7 @@ const app = express();
 
 app.use(bodyParser.text());
 
-app.get('/', (req, res) => {
+app.get('/test', (req, res) => {
   res.send('Hello World!');
 });
 
